@@ -38,7 +38,7 @@ tests=$(if [[ -n "${PIPELINE_MODE:-}" ]] && ( [[ "${BUILDKITE_BRANCH:-}" == "${B
   # there is no mxnet-1.6.0.post0 and mxnet-1.6.0 does not work with horovod
   # https://github.com/apache/incubator-mxnet/issues/16193
   # however, there is an mxnet-cu101-1.6.0.post0, so we test this with gpu instead of cpu
-  #printf "test-cpu-gloo-py3_8-tf2_5_1-keras2_5_1-torch1_8_1-mxnet1_6_0_p0-pyspark3_2_0 "
+  #printf "test-cpu-gloo-py3_8-tf2_5_1-keras2_5_0rc0-torch1_8_1-mxnet1_6_0_p0-pyspark3_2_0 "
   printf "test-cpu-gloo-py3_8-tf2_6_0-keras2_6_0-torch1_9_1-mxnet1_7_0_p2-pyspark3_2_0 "
   # our baseline again
 # printf "test-cpu-gloo-py3_8-tf2_7_0-keras2_7_0-torch1_10_0-mxnet1_8_0_p0-pyspark3_2_0 "
@@ -47,10 +47,10 @@ tests=$(if [[ -n "${PIPELINE_MODE:-}" ]] && ( [[ "${BUILDKITE_BRANCH:-}" == "${B
   # then we vary the frameworks for gpu
   printf "test-gpu-gloo-py3_7-tf1_15_5-keras2_2_4-torch1_7_1-mxnet1_5_1_p0-pyspark3_2_0 "
   # this is required as we cannot test mxnet-1.6.0.post0 with cpu
-  printf "test-gpu-gloo-py3_8-tf2_5_1-keras2_5_1-torch1_8_1-mxnet1_6_0_p0-pyspark3_2_0 "
+  printf "test-gpu-gloo-py3_8-tf2_5_1-keras2_5_0rc0-torch1_8_1-mxnet1_6_0_p0-pyspark3_2_0 "
   # we additionally test the previous framework combination (CUDA 10.x) with mxnet 1.7.x
   # as mxnet 1.7.x only supports CUDA 10.x, but next framework combination targets CUDA 11.x
-  printf "test-gpu-gloo-py3_8-tf2_5_1-keras2_5_1-torch1_8_1-mxnet1_7_0_p1-pyspark3_2_0 "
+  printf "test-gpu-gloo-py3_8-tf2_5_1-keras2_5_0rc0-torch1_8_1-mxnet1_7_0_p1-pyspark3_2_0 "
   # we deviate from mxnet1_7_0_p2 here as other frameworks target CUDA 11.x and
   # mxnet 1.7.x only supports CUDA 10.x, with mxnet 1.8.x we have CUDA 11.x packages
   printf "test-gpu-gloo-py3_8-tf2_6_0-keras2_6_0-torch1_9_1-mxnet1_8_0_p0-pyspark3_2_0 "
